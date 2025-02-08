@@ -31,7 +31,7 @@
     if (_0xba85a2.type == "ready") {
       var _0x39ea00 = Lampa.Template.get("menu_yt");
       _0x39ea00.on("hover:enter", function (_0x69cc8) {
-        $("<a target=\"_blank\" href=\"http://192.168.0.19\"></a>")[0].click();
+        $("<a target=\"_blank\" href=\"https://media.vkumare.xyz\"></a>")[0].click();
       });
       $(".menu .menu__list").eq(0).append(_0x39ea00);
     }
