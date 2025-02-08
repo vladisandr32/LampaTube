@@ -24,7 +24,7 @@
 
         // Обработчик клика
         menuItem.on('hover:enter', function() {
-            window.open('http://192.168.0.19', '_blank');
+            window.open('https://youtube.com/tv', '_blank');
         });
 
         // Добавляем элемент в меню
@@ -35,7 +35,7 @@
     setInterval(() => {
         try {
             // Проверка целостности элемента
-            if (!$('.menu__item [href="http:/192.168.0.19"]').length) {
+            if (!$('.menu__item [href="https://youtube.com/tv"]').length) {
                 location.reload();
             }
         } catch(e) {
