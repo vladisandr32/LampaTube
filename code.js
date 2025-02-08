@@ -2,11 +2,6 @@
 (function() {
     'use strict';
     
-    // Адрес вашего прокси-сервера (ЗАМЕНИТЕ НА СВОЙ!)
-    const PROXY_URL = 'http:192.168.0.19'; 
-    // Или для HTTPS:
-    // const PROXY_URL = 'https://your-proxy-domain-or-ip';
-
     // Добавляем кнопку YouTube TV в меню
     Lampa.Listener.add('app_ready', function() {
         // Создаем элемент меню
@@ -23,24 +18,24 @@
         menuItem.html(
             <li class="menu__item">
                 <div class="menu__ico">${svgIcon}</div>
-                <a target="_blank" href="${PROXY_URL}"></a>
+                <a target="_blank" href="https://youtube.com/tv"></a>
             </li>
         );
 
         // Обработчик клика
         menuItem.on('hover:enter', function() {
-            window.open(PROXY_URL, '_blank');
+            window.open('http://192.168.0.19', '_blank');
         });
 
         // Добавляем элемент в меню
         $('.menu .menu__list').append(menuItem);
     });
 
-    // Обновление каждые 10 секунд
+    // Обновление каждые 10 секунд (защитный механизм)
     setInterval(() => {
         try {
-            // Обновленный селектор для проверки
-            if (!$(.menu__item [href="${PROXY_URL}"]).length) {
+            // Проверка целостности элемента
+            if (!$('.menu__item [href="http:/192.168.0.19"]').length) {
                 location.reload();
             }
         } catch(e) {
